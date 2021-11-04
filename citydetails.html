@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="./img/favicon_io (1)/favicon-16x16.png"
+    />
+    <title>Weather Bolt</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@200;300;400;500;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- style sheet -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main class="report-note-wrapper">
+      <header>
+        <div class="header-content">
+          <div class="header-logo">
+            <i class="fas fa-sun"></i>
+            <a href="./index.html">WeatherBolt</a>
+          </div>
+          <div class="hero-left">
+            <div class="city-input">
+              <input
+                type="text"
+                placeholder="Enter a city"
+                class="city-search-input"
+              />
+              <div class="search-items hidden">
+                <!-- <a href="./citydetails.html" class="search-item" data-id=""
+                  >nigeria</a
+                > -->
+                <!-- <a href="./citydetails.html" class="search-item">cairo</a>
+                <a href="./citydetails.html" class="search-item">cairo</a>
+                <a href="./citydetails.html" class="search-item">cairo</a>
+                <a href="./citydetails.html" class="search-item">cairo</a>
+                <a href="./citydetails.html" class="search-item">cairo</a>
+                <a href="./citydetails.html" class="search-item">cairo</a>
+                <a href="./citydetails.html" class="search-item">cairo</a> -->
+              </div>
+              <div class="error-handle hidden">
+                <p>No results found</p>
+              </div>
+            </div>
+            <button class="get-location-btn" aria-label="get geolocation">
+              <i class="fas fa-map-marker-alt"></i> get Weather report for your
+              location
+            </button>
+          </div>
+        </div>
+      </header>
+      <section class="report-note-cont">
+        <section class="report-section">
+          <div class="report-header">
+            <h4>Weather Report</h4>
+            <button class="report-fav-btn">
+              <i class="fas fa-bookmark btn-bookmark" data-id="${city.id}"></i>
+            </button>
+          </div>
+          <div class="report-details">
+            <div class="report-location">
+              <h3 class="report-city"></h3>
+              <h3 class="report-country"></h3>
+            </div>
+            <div>
+              <h3 class="report-temp"></h3>
+              <h3 class="report-text"></h3>
+            </div>
+            <div class="report-img">
+              <img src="." class="report-image" alt="" />
+            </div>
+          </div>
+          <div class="report-item">
+            <p class="report-title">region</p>
+            <p class="report-response report-region"></p>
+          </div>
+          <div class="report-item">
+            <p class="report-title">longitude</p>
+            <p class="report-response report-lon"></p>
+          </div>
+          <div class="report-item">
+            <p class="report-title">latitude</p>
+            <p class="report-response report-lat"></p>
+          </div>
+          <div class="report-item">
+            <p class="report-title">timezone</p>
+            <p class="report-response report-tz"></p>
+          </div>
+          <div class="report-item">
+            <p class="report-title">local time</p>
+            <p class="report-response report-ltime"></p>
+          </div>
+          <div class="report-item">
+            <p class="report-title">observation time</p>
+            <p class="report-response report-otime"></p>
+          </div>
+          <div class="report-item">
+            <p class="report-title">wind speed</p>
+            <p class="report-response report-wspeed"></p>
+          </div>
+          <div class="report-item">
+            <p class="report-title">wind degree</p>
+            <p class="report-response report-wdegree"></p>
+          </div>
+          <div class="report-item">
+            <p class="report-title">wind direction</p>
+            <p class="report-response report-wdir"></p>
+          </div>
+          <div class="report-item">
+            <p class="report-title">precipitation</p>
+            <p class="report-response report-precip"></p>
+          </div>
+          <div class="report-item">
+            <p class="report-title">pressure</p>
+            <p class="report-response report-press"></p>
+          </div>
+          <div class="report-item">
+            <p class="report-title">humidity</p>
+            <p class="report-response report-hum"></p>
+          </div>
+        </section>
+        <section class="notes-section">
+          <h4 class="note-title">Notes Report</h4>
+          <div>
+            <textarea
+              name="notes"
+              id=""
+              cols="30"
+              rows="4"
+              placeholder="Type a note here..."
+            ></textarea>
+            <p class="note-border"></p>
+            <button class="add-note">Add Note</button>
+
+            <div class="note-items">
+              <!-- <div class="note-item">
+                <p class="note-text">Text here</p>
+                <div class="note-btns">
+                  <button class=""><i class="fas fa-edit"></i></button>
+                  <button><i class="fas fa-trash"></i></button>
+                </div>
+              </div>
+
+              <div class="note-item">
+                <p class="note-text">Text here</p>
+                <div class="note-btns">
+                  <button class=""><i class="fas fa-edit"></i></button>
+                  <button><i class="fas fa-trash"></i></button>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <div class="geolocation-error hidden">
+      <bold>Turn on location in your browser settings</bold>
+    </div>
+    <script type="module" src="./citydetails.js"></script>
+  </body>
+</html>
