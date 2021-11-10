@@ -20,7 +20,7 @@ const getCoords = function () {
       const id = `${splice[0]} ${splice[1]}`;
       console.log(id);
       setLocalStorage("cityId", id);
-      document.location.replace("http://127.0.0.1:5500/citydetails.html");
+      document.location.replace("https://127.0.0.1:5500/citydetails.html");
     },
     function (error) {
       geolocationError.classList.remove("hidden");
