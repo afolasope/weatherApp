@@ -10,17 +10,12 @@ searchInput.addEventListener("keyup", async function () {
   errorHandle.textContent = "please wait";
   try {
     const value = searchInput.value;
-    // if (!value) {
-    //   errorHandle.classList.add("hidden");
-    //   searchCardCon.classList.add("hidden");
-    // }
-
     searchCardCon.style.display = "none";
     const fetchData = await fetch(
       `https://api.weatherstack.com/autocomplete?access_key=46f95323dfebd3959827ebf1cdcc4079&query=${value}`
     );
     const response = await fetchData.json();
-
+console.log(response);
     searchCardCon.style.display = "block";
 
     if (response.request) {
@@ -39,7 +34,7 @@ searchInput.addEventListener("keyup", async function () {
       });
       searchCardCon.innerHTML = searchDisplay.join("");
     }
-    if (response.error.code === 602 || response.error.code === 601) {
+    if (response.error || response.error.code === 602 || response.error.code === 601) {
       errorHandle.textContent = "no result found";
       searchCardCon.style.display = "none";
       setTimeout(() => {

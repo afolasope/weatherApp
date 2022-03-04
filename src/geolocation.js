@@ -1,7 +1,7 @@
-import { getElement, setLocalStorage, getStorageItem } from "./utils.js";
+import { getElement, setLocalStorage, getStorageItem } from './utils.js';
 
-const geolocationBtn = getElement(".get-location-btn");
-const geolocationError = getElement(".geolocation-error");
+const geolocationBtn = getElement('.get-location-btn');
+const geolocationError = getElement('.geolocation-error');
 
 const getCoords = function () {
   navigator.geolocation.getCurrentPosition(
@@ -13,24 +13,25 @@ const getCoords = function () {
       const data = await fetch(
         `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=AIzaSyAG5CLuCdk131eR5JIHsc92jTxqIdDz4xM`
       );
+      console.log(data);
       const res = await data.json();
       const city = res.plus_code.compound_code;
-      const cityA = city.split(" ");
+      const cityA = city.split(' ');
       const splice = cityA.splice(1);
       const id = `${splice[0]} ${splice[1]}`;
       console.log(id);
-      setLocalStorage("cityId", id);
-      document.location.replace("https://127.0.0.1:5500/citydetails.html");
+      setLocalStorage('cityId', id);
+      document.location.replace('/citydetails.html');
     },
     function (error) {
-      geolocationError.classList.remove("hidden");
+      geolocationError.classList.remove('hidden');
       setTimeout(() => {
-        geolocationError.classList.add("hidden");
+        geolocationError.classList.add('hidden');
       }, 1000);
     }
   );
 };
 
-geolocationBtn.addEventListener("click", async function () {
+geolocationBtn.addEventListener('click', async function () {
   getCoords();
 });
