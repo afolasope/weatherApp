@@ -1,7 +1,9 @@
+import { KEY_WEATHER } from './utils.js';
+
 const fetchCity = async function (city) {
   try {
     const data = await fetch(
-      `https://api.weatherstack.com/current?access_key=46f95323dfebd3959827ebf1cdcc4079&query=${city}`
+      `https://api.weatherstack.com/current?access_key=${KEY_WEATHER}&query=${city}`
     );
     const response = await data.json();
     return response;

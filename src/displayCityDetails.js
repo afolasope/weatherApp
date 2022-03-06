@@ -1,27 +1,27 @@
-import { getElement, getStorageItem } from "./utils.js";
+import { getElement, getStorageItem } from './utils.js';
 
-const citySearchCon = getElement(".search-items");
+const citySearchCon = getElement('.search-items');
 
-const city = getElement(".report-city");
-const country = getElement(".report-country");
-const temp = getElement(".report-temp");
-const text = getElement(".report-text");
-const image = getElement(".report-image");
-const region = getElement(".report-region");
-const lon = getElement(".report-lon");
-const lat = getElement(".report-lat");
-const timezone = getElement(".report-tz");
-const ltime = getElement(".report-ltime");
-const otime = getElement(".report-otime");
-const wspeed = getElement(".report-wspeed");
-const wdegree = getElement(".report-wdegree");
-const wdir = getElement(".report-wdir");
-const precip = getElement(".report-precip");
-const pressure = getElement(".report-press");
-const humidity = getElement(".report-hum");
+const city = getElement('.report-city');
+const country = getElement('.report-country');
+const temp = getElement('.report-temp');
+const text = getElement('.report-text');
+const image = getElement('.report-image');
+const region = getElement('.report-region');
+const lon = getElement('.report-lon');
+const lat = getElement('.report-lat');
+const timezone = getElement('.report-tz');
+const ltime = getElement('.report-ltime');
+const otime = getElement('.report-otime');
+const wspeed = getElement('.report-wspeed');
+const wdegree = getElement('.report-wdegree');
+const wdir = getElement('.report-wdir');
+const precip = getElement('.report-precip');
+const pressure = getElement('.report-press');
+const humidity = getElement('.report-hum');
 
 const displayCityDetails = function (info) {
-  citySearchCon.classList.add("hidden");
+  citySearchCon.classList.add('hidden');
   city.textContent = `${info.cityName}`;
   country.textContent = `${info.country}`;
   temp.textContent = `${info.temperature}℃`;

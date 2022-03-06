@@ -12,7 +12,7 @@ searchInput.addEventListener('keyup', async function () {
     const value = searchInput.value;
     searchCardCon.style.display = 'none';
     const fetchData = await fetch(
-      `https://api.weatherstack.com/autocomplete?access_key=46f95323dfebd3959827ebf1cdcc4079&query=${value}`
+      `https://api.weatherstack.com/autocomplete?access_key=ecb932b2f749d26f72b9c7d10c604550&query=${value}`
     );
     const response = await fetchData.json();
     console.log(response);
