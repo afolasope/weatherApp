@@ -1,4 +1,5 @@
-import { getElement, setLocalStorage, getStorageItem } from './utils.js';
+import { getElement, setLocalStorage } from './utils.js';
+import { GOOGLE_MAP } from './utils.js';
 
 const geolocationBtn = getElement('.get-location-btn');
 const geolocationError = getElement('.geolocation-error');
@@ -11,7 +12,7 @@ const getCoords = function () {
       const lon = position.coords.longitude;
       console.log(lat, lon);
       const data = await fetch(
-        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=AIzaSyAG5CLuCdk131eR5JIHsc92jTxqIdDz4xM`
+        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=${GOOGLE_MAP}`
       );
       console.log(data);
       const res = await data.json();

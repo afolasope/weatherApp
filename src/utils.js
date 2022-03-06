@@ -7,21 +7,21 @@ const getElement = (selection) => {
 };
 
 const topCities = [
-  "Beijing",
-  "Buenos Aires",
-  "Cairo",
-  "Chongqing",
-  "Delhi",
-  "Dhaka",
-  "Karachi",
-  "Mexico City",
-  "Mumbai",
-  "New York",
-  "Osaka",
-  "Seoul",
-  "Sao Paulo",
-  "Shangai",
-  "Tokyo",
+  'Beijing',
+  'Buenos Aires',
+  'Cairo',
+  'Chongqing',
+  'Delhi',
+  'Dhaka',
+  'Karachi',
+  'Mexico City',
+  'Mumbai',
+  'New York',
+  'Osaka',
+  'Seoul',
+  'Sao Paulo',
+  'Shangai',
+  'Tokyo',
 ];
 
 const setLocalStorage = function (name, item) {
@@ -36,4 +36,14 @@ const getStorageItem = (item) => {
   return JSON.parse(localStorage.getItem(item));
 };
 
-export { getElement, topCities, setLocalStorage, getStorageItem };
+const KEY_WEATHER = 'ecb932b2f749d26f72b9c7d10c604550';
+const GOOGLE_MAP = 'AIzaSyCa7ux5MjN9vMKX3ETuyvP5Al9glu3sFqY';
+
+export {
+  getElement,
+  topCities,
+  setLocalStorage,
+  getStorageItem,
+  KEY_WEATHER,
+  GOOGLE_MAP,
+};

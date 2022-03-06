@@ -3,15 +3,15 @@ import {
   getElement,
   setLocalStorage,
   getStorageItem,
-} from "./utils.js";
-import { fetchCity } from "./fetchCity.js";
-import { extractInfo } from "./extractInfo.js";
-const topCitiesCardContainer = getElement(".top-cities-section-con");
-const loaderImg = getElement(".loader-cont");
-const topCitiesSection = getElement(".top-cities-section");
+} from './utils.js';
+import { fetchCity } from './fetchCity.js';
+import { extractInfo } from './extractInfo.js';
+const topCitiesCardContainer = getElement('.top-cities-section-con');
+const loaderImg = getElement('.loader-cont');
+const topCitiesSection = getElement('.top-cities-section');
 
 const renderTopCities = function (element, info) {
-  const favoriteList = getStorageItem("favlist") || [];
+  const favoriteList = getStorageItem('favlist') || [];
   const articles = info.map(function (city) {
     const favorite = favoriteList.find((fav) => fav.id === city.id);
 
@@ -41,7 +41,7 @@ const renderTopCities = function (element, info) {
               <button aria-label= "bookmark">
                 <i
                   class="fas fa-bookmark btn-bookmark ${
-                    favorite ? "favorite" : ""
+                    favorite ? 'favorite' : ''
                   }"
                   data-id="${city.id}"
                 ></i>
@@ -56,13 +56,13 @@ const renderTopCities = function (element, info) {
   });
 
   if (element && Array.isArray(articles) && articles.length > 0) {
-    topCitiesCardContainer.innerHTML = articles.join("");
+    topCitiesCardContainer.innerHTML = articles.join('');
   }
 };
 
 const fetchTopCities = async function () {
   const data = topCities.map(async function (city) {
-    loaderImg.classList.remove("hidden");
+    loaderImg.classList.remove('hidden');
     const response = await fetchCity(city);
     if (response.error && response.error.code === 104) {
       topCitiesSection.innerHTML = `<h1>🔴🔴🔴 Something went wrong</h1>`;
@@ -71,8 +71,8 @@ const fetchTopCities = async function () {
     return info;
   });
   const topCityDetails = await Promise.all(data);
-  loaderImg.classList.add("hidden");
-  setLocalStorage("topCitiesDetails", topCityDetails);
+  loaderImg.classList.add('hidden');
+  setLocalStorage('topCitiesDetails', topCityDetails);
 
   renderTopCities(topCitiesCardContainer, topCityDetails);
 };
