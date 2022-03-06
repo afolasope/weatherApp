@@ -1,5 +1,3 @@
-import apiKey from '../apiKey.js';
-
 const getElement = (selection) => {
   const element = document.querySelector(selection);
   if (element) return element;
@@ -38,8 +36,8 @@ const getStorageItem = (item) => {
   return JSON.parse(localStorage.getItem(item));
 };
 
-const KEY_WEATHER = apiKey.weather;
-const GOOGLE_MAP = apiKey.googleMap;
+const KEY_WEATHER = ecb932b2f749d26f72b9c7d10c604550;
+const GOOGLE_MAP = AIzaSyCa7ux5MjN9vMKX3ETuyvP5Al9glu3sFqY;
 
 export {
   getElement,
