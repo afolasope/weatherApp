@@ -1,48 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      type="image/jpg"
-      href="./img/favicon_io (1)/favicon-16x16.png"
-    />
-    <title>Weather Bolt</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" type="image/jpg" href="./img/favicon_io (1)/favicon-16x16.png" />
+        <title>Weather Bolt</title>
 
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@200;400;500;600;900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- style sheet -->
-    <link rel="stylesheet" href="style.css" />
-    <!-- font awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <main>
-      <header>
-        <div class="header-content">
-          <div class="header-logo">
-            <i class="fas fa-sun"></i>
-            <a href="./index.html">WeatherBolt</a>
-          </div>
-          <div class="hero-left">
-            <div class="city-input">
-              <input
-                type="text"
-                placeholder="Enter a city"
-                class="city-search-input"
-              />
-              <div class="search-items hidden">
-                <!-- <a href="./citydetails.html" class="search-item">nigeria</a>
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@200;400;500;600;900&display=swap"
+            rel="stylesheet"
+        />
+        <!-- style sheet -->
+        <link rel="stylesheet" href="style.css" />
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <div class="header-content">
+                    <div class="header-logo">
+                        <i class="fas fa-sun"></i>
+                        <a href="./index.html">WeatherBolt</a>
+                    </div>
+                    <div class="hero-left">
+                        <div class="city-input">
+                            <input type="text" placeholder="Enter a city" class="city-search-input" />
+                            <div class="search-items hidden">
+                                <!-- <a href="./citydetails.html" class="search-item">nigeria</a>
                 <a href="./citydetails.html" class="search-item">cairo</a>
                 <a href="./citydetails.html" class="search-item">cairo</a>
                 <a href="./citydetails.html" class="search-item">cairo</a>
@@ -50,22 +39,21 @@
                 <a href="./citydetails.html" class="search-item">cairo</a>
                 <a href="./citydetails.html" class="search-item">cairo</a>
                 <a href="./citydetails.html" class="search-item">cairo</a> -->
-              </div>
-              <div class="error-handle hidden">
-                <p>No results found</p>
-              </div>
-            </div>
-            <button class="get-location-btn" aria-label="get geolocation">
-              <i class="fas fa-map-marker-alt"></i> get Weather report for your
-              location
-            </button>
-          </div>
-        </div>
-      </header>
-      <section class="weather-section favorite-section">
-        <h3>Favorite Cities</h3>
-        <div class="weather-section-con fav-cities-section-con">
-          <!--   <article class="city-card-con">
+                            </div>
+                            <div class="error-handle hidden">
+                                <p>No results found</p>
+                            </div>
+                        </div>
+                        <button class="get-location-btn hidden" aria-label="get geolocation">
+                            <i class="fas fa-map-marker-alt"></i> get Weather report for your location
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <section class="weather-section favorite-section">
+                <h3>Favorite Cities</h3>
+                <div class="weather-section-con fav-cities-section-con">
+                    <!--   <article class="city-card-con">
             <div class="city-card">
               <div class="city-texts">
                 <div class="weather-info">
@@ -136,15 +124,15 @@
               </a>
             </div>
           </article> -->
-        </div>
-      </section>
-      <section class="weather-section top-cities-section">
-        <div class="loader-cont hidden">
-          <img src="./img/icons.svg" alt="" class="loader-img" />
-        </div>
-        <h3>Top Cities</h3>
-        <div class="weather-section-con top-cities-section-con">
-          <!-- <article class="city-card-con">
+                </div>
+            </section>
+            <section class="weather-section top-cities-section">
+                <div class="loader-cont hidden">
+                    <img src="./img/icons.svg" alt="" class="loader-img" />
+                </div>
+                <h3>Top Cities</h3>
+                <div class="weather-section-con top-cities-section-con">
+                    <!-- <article class="city-card-con">
             <div class="city-card">
               <div class="city-texts">
                 <div class="weather-info">
@@ -174,19 +162,19 @@
               </button>
             </div>
           </article> -->
+                </div>
+                <div class="no-cities hidden">
+                    <div class="no-cities-img">
+                        <img src="./img/empty.png" alt="no-cities" />
+                    </div>
+                    <p>no top cities record</p>
+                </div>
+            </section>
+        </main>
+        <div class="geolocation-error hidden">
+            <p>Turn on location in your browser settings</p>
         </div>
-        <div class="no-cities hidden">
-          <div class="no-cities-img">
-            <img src="./img/empty.png" alt="no-cities" />
-          </div>
-          <p>no top cities record</p>
-        </div>
-      </section>
-    </main>
-    <div class="geolocation-error hidden">
-      <p>Turn on location in your browser settings</p>
-    </div>
-    <script></script>
-    <script type="module" src="./script.js"></script>
-  </body>
+        <script></script>
+        <script type="module" src="./script.js"></script>
+    </body>
 </html>
