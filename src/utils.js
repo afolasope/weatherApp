@@ -34,7 +34,7 @@ const getStorageItem = (item) => {
     return JSON.parse(localStorage.getItem(item));
 };
 
-const KEY_WEATHER = '6fb2350322db6ae123184c88adf5c5ed';
+const KEY_WEATHER = '385911ec12115646f496eddb39a2c908';
 const GOOGLE_MAP = 'AIzaSyCa7ux5MjN9vMKX3ETuyvP5Al9glu3sFqY';
 
 export { getElement, getStorageItem, GOOGLE_MAP, KEY_WEATHER, setLocalStorage, topCities };
